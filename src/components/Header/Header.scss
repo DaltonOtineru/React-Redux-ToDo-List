@@ -1,0 +1,19 @@
+.header {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+}
+.header--container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title--box > * {
+  padding: 0 1rem;
+}
+h1 {
+  margin: 0;
+  color: #ffffffa9;
+}
