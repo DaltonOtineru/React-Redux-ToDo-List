@@ -1,0 +1,13 @@
+{
+  "todos": [
+    {
+      "todo": "Go grocery shopping!"
+    },
+    {
+      "todo": "Fix my brain..."
+    },
+    {
+      "todo": "Learn how tf to use Redux :|"
+    }
+  ]
+}
