@@ -1,0 +1,25 @@
+.todos {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 600px;
+}
+.input--area {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.todos input {
+  // width: 500px;
+  border: none;
+  border-radius: 5px;
+  height: 2.5em;
+  width: 100%;
+}
+.todo--items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+}

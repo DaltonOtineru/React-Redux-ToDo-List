@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signIn, signOut } from '../../Redux/actions';
-import GoogleButton from 'react-google-button';
+import { signIn, signOut } from '../../Redux/slice/authSlice';
 import { GoogleLogout } from 'react-google-login';
 import { GoogleLogin } from 'react-google-login';
 
 export class GoogleAuth extends Component {
   // Initialize the library first
   componentDidMount() {
+    console.log('foo');
     window.gapi.load('client:auth2', () => {
       window.gapi.client
         .init({
           clientId:
-            '198532046195-s9v6hpsdsrf0th6qrcv93rit722d4lrh.apps.googleusercontent.com',
+            '895140598985-8arbu88qb8n9ncfgpvelvp6eihh47kd2.apps.googleusercontent.com',
 
           scope: 'email',
         })

@@ -1,7 +1,6 @@
-export const ADD_TEXT = 'ADD_TEXT';
-export const ADD_TASK = 'ADD_TASK';
-export const EDIT_TASK = 'EDIT_TASK';
-export const DELETE_TASK = 'DELETE_TASK';
-export const FETCH_TASKS = 'FETCH_TASKS';
+export const ADD_TODO = 'ADD_TODO';
+export const EDIT_TODO = 'EDIT_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
+export const FETCH_TODOS = 'FETCH_TODOS';
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
