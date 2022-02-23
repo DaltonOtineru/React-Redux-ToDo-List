@@ -11,15 +11,43 @@
   width: 100%;
 }
 .todos input {
-  // width: 500px;
   border: none;
   border-radius: 5px;
   height: 2.5em;
   width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.add-btn {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 2rem;
+  margin-left: 3px;
 }
 .todo--items {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 200px;
+}
+ul {
+  width: 100%;
+  list-style: none;
+  padding: 1rem 0 0 0;
+  margin: 0;
+}
+.todo--item {
+  max-width: 100%;
+  height: 4rem;
+  border: 1px solid #333;
+  margin-bottom: 1rem;
+  padding: 5px 0 0 4px;
+  border-radius: 4px;
 }

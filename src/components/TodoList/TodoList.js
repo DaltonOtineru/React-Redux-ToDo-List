@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addTodos } from '../../Redux/slice/todoSlice';
+import {
+  addTodos,
+  removeTodos,
+  updateTodos,
+  completeTodos,
+} from '../../Redux/slice/todoSlice';
 import './TodoList.scss';
+import TodoItem from './TodoItem';
+import { GoPlus } from 'react-icons/go';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,6 +19,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addTodo: (obj) => dispatch(addTodos(obj)),
+    removeTodo: (id) => dispatch(removeTodos(id)),
+    updateTodo: (obj) => dispatch(updateTodos(obj)),
+    completeTodo: (id) => dispatch(completeTodos(id)),
   };
 };
 
@@ -25,9 +35,16 @@ const TodoList = (props) => {
       props.addTodo({
         id: Math.floor(Math.random() * 1000),
         item: todo,
+        completed: false,
       });
       setTodo('');
-      console.log(props.todos);
+      console.log(props);
+    }
+  };
+
+  const addItemKeyPress = (e) => {
+    if (e.which === 13) {
+      add();
     }
   };
 
@@ -42,16 +59,25 @@ const TodoList = (props) => {
           className="todo-input"
           onChange={(e) => handleChange(e)}
           value={todo}
+          onKeyPress={(e) => addItemKeyPress(e)}
         />
         <button onClick={() => add()} className="add-btn">
-          +
+          <GoPlus />
         </button>
       </div>
       <div className="todo--items">
         <ul>
           {props.todos.length > 0 &&
             props.todos.map((item) => {
-              return <li key={item.id}>{item.item}</li>;
+              return (
+                <TodoItem
+                  key={item.id}
+                  item={item}
+                  removeTodo={props.removeTodo}
+                  updateTodo={props.updateTodo}
+                  completeTodo={props.completeTodo}
+                />
+              );
             })}
         </ul>
       </div>
@@ -60,3 +86,14 @@ const TodoList = (props) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+
+{
+  /* {props.todos.length > 0 &&
+  props.todos.map((item) => {
+    return (
+      <li className="todo--item" key={item.id}>
+        {item.item}
+      </li>
+    );
+  })} */
+}

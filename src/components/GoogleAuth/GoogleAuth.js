@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { signIn, signOut } from '../../Redux/slice/authSlice';
 import { GoogleLogout } from 'react-google-login';
 import { GoogleLogin } from 'react-google-login';
+import './GoogleAuth.scss';
 
 export class GoogleAuth extends Component {
   // Initialize the library first
   componentDidMount() {
-    console.log('foo');
     window.gapi.load('client:auth2', () => {
       window.gapi.client
         .init({
@@ -45,14 +45,21 @@ export class GoogleAuth extends Component {
     if (this.props.isSignedIn === null) {
       return null;
     } else if (this.props.isSignedIn === true) {
-      return <GoogleLogout onClick={this.onSignOutClick} />;
+      return (
+        <GoogleLogout
+          className="google--logout"
+          onClick={this.onSignOutClick}
+        />
+      );
     } else {
-      return <GoogleLogin onClick={this.onSignInClick} />;
+      return (
+        <GoogleLogin className="google--login" onClick={this.onSignInClick} />
+      );
     }
   }
 
   render() {
-    return <div>{this.renderAuthButton()}</div>;
+    return <div className="google--auth">{this.renderAuthButton()}</div>;
   }
 }
 
