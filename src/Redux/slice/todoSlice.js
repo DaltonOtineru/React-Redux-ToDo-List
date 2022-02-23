@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import todosApi from '../../api/todosApi';
 
 const initialState = [];
 
@@ -37,10 +38,19 @@ export const addTodoReducer = createSlice({
         return todo;
       });
     },
+    fetchTodos: () => {
+      return async (dispatch) => {
+        const response = await todosApi.get('/todos');
+
+        dispatch({
+          payload: response.data,
+        });
+      };
+    },
   },
 });
 
-export const { addTodos, removeTodos, updateTodos, completeTodos } =
+export const { addTodos, removeTodos, updateTodos, completeTodos, fetchTodos } =
   addTodoReducer.actions;
 export const todoReducer = addTodoReducer.reducer;
 export default addTodoReducer.reducer;

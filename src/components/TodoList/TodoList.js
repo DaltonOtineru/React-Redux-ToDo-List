@@ -5,25 +5,11 @@ import {
   removeTodos,
   updateTodos,
   completeTodos,
+  fetchTodos,
 } from '../../Redux/slice/todoSlice';
 import './TodoList.scss';
 import TodoItem from './TodoItem';
 import { GoPlus } from 'react-icons/go';
-
-const mapStateToProps = (state) => {
-  return {
-    todos: state.todos,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addTodo: (obj) => dispatch(addTodos(obj)),
-    removeTodo: (id) => dispatch(removeTodos(id)),
-    updateTodo: (obj) => dispatch(updateTodos(obj)),
-    completeTodo: (id) => dispatch(completeTodos(id)),
-  };
-};
 
 const TodoList = (props) => {
   const [todo, setTodo] = useState('');
@@ -36,6 +22,7 @@ const TodoList = (props) => {
         id: Math.floor(Math.random() * 1000),
         item: todo,
         completed: false,
+        userId: props.userId,
       });
       setTodo('');
       console.log(props);
@@ -85,15 +72,21 @@ const TodoList = (props) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+const mapStateToProps = (state) => {
+  return {
+    todos: state.todos,
+    userId: state.auth.userId,
+  };
+};
 
-{
-  /* {props.todos.length > 0 &&
-  props.todos.map((item) => {
-    return (
-      <li className="todo--item" key={item.id}>
-        {item.item}
-      </li>
-    );
-  })} */
-}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addTodo: (obj) => dispatch(addTodos(obj)),
+    removeTodo: (id) => dispatch(removeTodos(id)),
+    updateTodo: (obj) => dispatch(updateTodos(obj)),
+    completeTodo: (id) => dispatch(completeTodos(id)),
+    fetchTodo: (obj) => dispatch(fetchTodos(obj)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

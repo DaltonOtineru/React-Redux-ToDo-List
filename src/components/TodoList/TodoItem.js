@@ -3,11 +3,12 @@ import { AiFillEdit } from 'react-icons/ai';
 
 import { ImCheckmark } from 'react-icons/im';
 import { TiDelete } from 'react-icons/ti';
+import { connect } from 'react-redux';
 
 import './TodoItem.scss';
 
 const TodoItem = (props) => {
-  const { item, updateTodo, removeTodo, completeTodo } = props;
+  const { item, updateTodo, removeTodo, completeTodo, userId } = props;
 
   const inputRef = useRef(true);
 
@@ -40,13 +41,20 @@ const TodoItem = (props) => {
             <ImCheckmark className="button--completed" />
           </button>
         )}
-        <button onClick={() => removeTodo(item.id)}>
-          <TiDelete className="button--delete" />
-        </button>
+        {item.userId === userId && (
+          <button onClick={() => removeTodo(item.id)}>
+            <TiDelete className="button--delete" />
+          </button>
+        )}
       </div>
       {/* {item.completed && <span className="completed">Done</span>} */}
     </li>
   );
 };
 
-export default TodoItem;
+const mapStateToProps = (state) => {
+  return {
+    userId: state.auth.userId,
+  };
+};
+export default connect(mapStateToProps, null)(TodoItem);
