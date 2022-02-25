@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signIn, signOut } from '../../Redux/slice/authSlice';
+import { signIn, signOut } from '../../Redux/actions';
 import { GoogleLogout } from 'react-google-login';
 import { GoogleLogin } from 'react-google-login';
 import './GoogleAuth.scss';

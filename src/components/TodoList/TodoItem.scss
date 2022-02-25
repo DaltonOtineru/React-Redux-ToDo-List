@@ -16,14 +16,14 @@
   cursor: pointer;
   font-size: 20px;
 }
-.button--completed {
+.button--update {
   color: rgb(0, 128, 0);
 }
 .button--delete {
   color: rgb(113, 10, 10);
   font-size: 24px;
 }
-.todo--item {
+.todo {
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.4);
@@ -34,4 +34,10 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 1rem;
   position: relative;
+}
+.todo--inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }

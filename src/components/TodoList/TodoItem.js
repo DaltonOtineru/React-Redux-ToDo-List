@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import { AiFillEdit } from 'react-icons/ai';
 
 import { ImCheckmark } from 'react-icons/im';
+import { AiFillEdit } from 'react-icons/ai';
 import { TiDelete } from 'react-icons/ti';
 import { connect } from 'react-redux';
 
@@ -49,7 +49,6 @@ const TodoItem = (props) => {
           </button>
         )}
       </div>
-      {/* {item.completed && <span className="completed">Done</span>} */}
     </li>
   );
 };

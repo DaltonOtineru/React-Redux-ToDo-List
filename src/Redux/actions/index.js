@@ -31,9 +31,9 @@ export const addTodo = (formValues) => {
     });
   };
 };
-export const fetchTodos = () => {
+export const fetchTodos = (id) => {
   return async (dispatch) => {
-    const response = await todos.get('/todos');
+    const response = await todos.get('/todos/');
 
     dispatch({
       type: FETCH_TODOS,
@@ -55,7 +55,7 @@ export const editTodo = (id, formValues) => {
 
 export const deleteTodo = (id) => {
   return async (dispatch) => {
-    const response = await todos.delete(`/todos/${id}`);
+    await todos.delete(`/todos/${id}`);
 
     dispatch({
       type: DELETE_TODO,
@@ -64,9 +64,9 @@ export const deleteTodo = (id) => {
   };
 };
 
-export const addText = (value) => {
-  return {
-    type: ADD_TEXT,
-    payload: value,
-  };
-};
+// export const addText = (value) => {
+//   return {
+//     type: ADD_TEXT,
+//     payload: value,
+//   };
+// };
