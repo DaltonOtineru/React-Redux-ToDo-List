@@ -14,8 +14,10 @@ const TodoTextArea = ({ todo, editTodo, deleteTodo, id }) => {
 
   const updateTodo = (id, value, e) => {
     if (e.which === 13) {
-      editTodo({ id, todo: value });
+      editTodo(todo.id, value);
       inputRef.current.disabled = true;
+      console.log(todo.id, value);
+      console.log(todo);
     }
   };
 
@@ -25,7 +27,7 @@ const TodoTextArea = ({ todo, editTodo, deleteTodo, id }) => {
         ref={inputRef}
         disabled={inputRef}
         defaultValue={todo.todo}
-        onKeyPress={(e) => updateTodo(todo.id, inputRef.current.value, e)}
+        onKeyPress={(e) => updateTodo(id, inputRef.current.value, e)}
       />
       <div className="buttons">
         <button onClick={() => changeFocus()}>

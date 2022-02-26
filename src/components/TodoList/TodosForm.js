@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { addTodo } from '../../Redux/actions';
 import { GoPlus } from 'react-icons/go';
 import './TodoForm.scss';
-import { reset } from 'redux-form';
 
 class TodosForm extends Component {
   renderInput = ({ input }) => {
@@ -19,10 +18,7 @@ class TodosForm extends Component {
   };
 
   onSubmit = (formValues) => {
-    const { resetForm } = this.props;
-    return this.props.addTodo(formValues).then(() => {
-      resetForm();
-    });
+    return this.props.addTodo(formValues);
   };
 
   render() {

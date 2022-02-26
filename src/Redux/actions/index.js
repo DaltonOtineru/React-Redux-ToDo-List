@@ -63,10 +63,3 @@ export const deleteTodo = (id) => {
     });
   };
 };
-
-// export const addText = (value) => {
-//   return {
-//     type: ADD_TEXT,
-//     payload: value,
-//   };
-// };

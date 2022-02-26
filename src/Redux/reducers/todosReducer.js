@@ -4,8 +4,6 @@ import {
   EDIT_TODO,
   DELETE_TODO,
   FETCH_TODOS,
-  SIGN_IN,
-  SIGN_OUT,
 } from '../actions/types';
 
 export default (state = {}, action) => {

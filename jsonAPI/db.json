@@ -1,29 +1,21 @@
 {
   "todos": [
     {
-      "todo": "bitch ass redux smh",
+      "todo": "Doo thisss",
       "userId": "108498117093222411766",
-      "id": 5
+      "id": 1,
+      "NO, DO THAT": "",
+      "Wait no do thisssss": ""
     },
     {
-      "todo": "FUCK THIS",
+      "todo": "do thaaaat",
       "userId": "108498117093222411766",
-      "id": 6
+      "id": 2
     },
     {
-      "todo": "huuuh",
+      "todo": "TODO ITEEEM",
       "userId": "108498117093222411766",
-      "id": 7
-    },
-    {
-      "todo": "hello",
-      "userId": "108498117093222411766",
-      "id": 8
-    },
-    {
-      "todo": "hello",
-      "userId": "108498117093222411766",
-      "id": 9
+      "id": 3
     }
   ]
 }

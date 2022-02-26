@@ -37,9 +37,9 @@ class TodoList extends Component {
   //   setTodo(e.target.value);
   // };
 
-  deleteTodo = (id) => {
-    this.props.deleteTodo(id);
-  };
+  // deleteTodo = (id) => {
+  //   this.props.deleteTodo(id);
+  // };
 
   renderList() {
     return this.props.todos.map((todo) => {
@@ -52,6 +52,7 @@ class TodoList extends Component {
                 todo={todo}
                 deleteTodo={deleteTodo}
                 editTodo={editTodo}
+                id={todo.id}
               />
             </div>
           </div>
