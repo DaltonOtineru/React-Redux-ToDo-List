@@ -4,22 +4,10 @@ import { connect } from 'react-redux';
 import { addTodo } from '../../Redux/actions';
 import { GoPlus } from 'react-icons/go';
 import './TodoForm.scss';
-
-//   <div className="input--area">
-//     <input
-//       className="todo-input"
-//       //   onChange={(e) => handleChange(e)}
-//       //   value={todo}
-//       //   onKeyPress={(e) => addItemKeyPress(e)}
-//     />
-//     <button className="add-btn">
-//       <GoPlus />
-//     </button>
-//   </div>
+import { reset } from 'redux-form';
 
 class TodosForm extends Component {
-  renderInput = ({ input, label, meta }) => {
-    const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
+  renderInput = ({ input }) => {
     return (
       <div className="input--area">
         <input {...input} autoComplete="off" className="input" />
@@ -31,15 +19,16 @@ class TodosForm extends Component {
   };
 
   onSubmit = (formValues) => {
-    this.props.addTodo(formValues);
+    const { resetForm } = this.props;
+    return this.props.addTodo(formValues).then(() => {
+      resetForm();
+    });
   };
 
   render() {
     return (
       <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
         <Field name="todo" component={this.renderInput} />
-
-        {/* <button className="ui button primary">Submit</button> */}
       </form>
     );
   }

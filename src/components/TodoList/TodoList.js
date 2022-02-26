@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  addTodos,
-  removeTodos,
-  updateTodos,
-  completeTodos,
-  deleteTodo,
-  fetchTodos,
-} from '../../Redux/actions';
+import { deleteTodo, fetchTodos, editTodo } from '../../Redux/actions';
 import './TodoList.scss';
 import './TodoItem.scss';
-import TodoItem from './TodoItem';
-import { GoPlus } from 'react-icons/go';
-import { AiFillEdit } from 'react-icons/ai';
-import { TiDelete } from 'react-icons/ti';
-import TodoItemTwo from './TodoItemTwo';
+
+import TodoTextArea from './TodoTextArea';
 
 class TodoList extends Component {
   // const [todo, setTodo] = useState('');
@@ -56,26 +46,19 @@ class TodoList extends Component {
       if (todo.userId === this.props.currentUserId) {
         return (
           // <TodoItemTwo />
-          <div className="todo">
+          <div className="todo" key={todo.id}>
             <div className="todo--inner">
-              <li>{todo.todo}</li>
-              <div className="buttons">
-                <button>
-                  <AiFillEdit className="button--update" />
-                </button>
-                <button>
-                  <TiDelete
-                    className="button--delete"
-                    onClick={this.deleteTodo()}
-                  />
-                </button>
-              </div>
+              <TodoTextArea
+                todo={todo}
+                deleteTodo={deleteTodo}
+                editTodo={editTodo}
+              />
             </div>
           </div>
         );
       } else {
         return (
-          <div className="todo">
+          <div className="todo" key={todo.id}>
             <li>{todo.todo}</li>
           </div>
         );
@@ -128,3 +111,17 @@ export default connect(mapStateToProps, { fetchTodos, deleteTodo })(TodoList);
                   />
                 );
               })} */
+
+// <li>{todo.todo}</li>
+// <div className="buttons">
+//   <button>
+//     <AiFillEdit className="button--update" />
+//   </button>
+//   <button>
+//     {/* <TiDelete
+//       className="button--delete"
+//       onClick={this.deleteTodo()}
+//     />  */}
+//     <TodoDelete todo={todo} deleteTodo={deleteTodo} />
+//   </button>
+// </div>

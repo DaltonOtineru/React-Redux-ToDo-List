@@ -1,48 +1,29 @@
 {
   "todos": [
     {
-      "todo": "Go grocery shopping!",
-      "id": "one",
-      "userId": "108498117093222411766"
+      "todo": "bitch ass redux smh",
+      "userId": "108498117093222411766",
+      "id": 5
     },
     {
-      "todo": "Go do something",
-      "id": "two",
-      "userId": "108498117093222411766"
+      "todo": "FUCK THIS",
+      "userId": "108498117093222411766",
+      "id": 6
     },
     {
-      "todo": "Do something else entirely",
-      "id": "three",
-      "userId": "108498117093222411766"
+      "todo": "huuuh",
+      "userId": "108498117093222411766",
+      "id": 7
     },
     {
       "todo": "hello",
       "userId": "108498117093222411766",
-      "id": "Nr2PTbT"
+      "id": 8
     },
     {
-      "todo": "testing",
+      "todo": "hello",
       "userId": "108498117093222411766",
-      "id": "BPAYQD6"
-    },
-    {
-      "todo": "testingtesting",
-      "userId": "108498117093222411766",
-      "id": "TqSR5Z4"
-    },
-    {
-      "todo": "gggg",
-      "userId": "108498117093222411766",
-      "id": "6KoHpt6"
-    },
-    {
-      "userId": "108498117093222411766",
-      "id": "xpCSuKe"
-    },
-    {
-      "todo": "gfgfgfgffg",
-      "userId": "108498117093222411766",
-      "id": "ki_OSZx"
+      "id": 9
     }
   ]
 }
