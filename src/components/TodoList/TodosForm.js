@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Field, formValues, reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { addTodo } from '../../Redux/actions';
 import { GoPlus } from 'react-icons/go';
@@ -18,7 +18,10 @@ class TodosForm extends Component {
   };
 
   onSubmit = (formValues) => {
-    return this.props.addTodo(formValues);
+    const { reset, addTodo } = this.props;
+    return addTodo(formValues).then(() => {
+      reset();
+    });
   };
 
   render() {

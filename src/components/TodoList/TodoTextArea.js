@@ -14,10 +14,8 @@ const TodoTextArea = ({ todo, editTodo, deleteTodo, id }) => {
 
   const updateTodo = (id, value, e) => {
     if (e.which === 13) {
-      editTodo(todo.id, value);
+      editTodo(todo.id, { todo: value });
       inputRef.current.disabled = true;
-      console.log(todo.id, value);
-      console.log(todo);
     }
   };
 

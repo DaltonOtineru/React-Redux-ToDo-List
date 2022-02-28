@@ -1,21 +1,19 @@
 {
   "todos": [
     {
-      "todo": "Doo thisss",
+      "todo": "Push changes to GitHub ",
       "userId": "108498117093222411766",
-      "id": 1,
-      "NO, DO THAT": "",
-      "Wait no do thisssss": ""
+      "id": 1
     },
     {
-      "todo": "do thaaaat",
+      "todo": "Go shopping",
       "userId": "108498117093222411766",
       "id": 2
     },
     {
-      "todo": "TODO ITEEEM",
+      "todo": "Work on my portfolio",
       "userId": "108498117093222411766",
-      "id": 3
+      "id": 4
     }
   ]
 }

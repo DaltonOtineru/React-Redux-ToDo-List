@@ -38,11 +38,7 @@ const TodoItem = (props) => {
             <AiFillEdit className="button--update" />
           </button>
         )}
-        {/* {item.completed === false && (
-          <button onClick={() => completeTodo(item.id)}>
-            <ImCheckmark className="button--completed" />
-          </button>
-        )} */}
+
         {item.userId === userId && (
           <button onClick={() => removeTodo(item.id)}>
             <TiDelete className="button--delete" />
