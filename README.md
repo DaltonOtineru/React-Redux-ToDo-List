@@ -1,11 +1,11 @@
 # To Do List
 
 
-## Project Description
+### Project Description
 
-To do list application where the user can add, edit & delete to do items. Intergrates Google Oauth so users can sign in with their Google account. Only signed in users are able to edit or delete their to do items. To do items are stored in a local JSON database server.
+To do list application where the user can add, edit & delete to do items. Intergrates Google Oauth so users can sign in with their Google account. Only signed in users are able to edit or delete their to do items. To do items are stored in a local JSON database server. All todos are fetched, added, edited & deleted using Redux. 
 
-## Technologies Used
+### Technologies Used
 
 - React JS
 - Redux
