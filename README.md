@@ -16,7 +16,9 @@ To do list application where the user can add, edit & delete to do items. Interg
 
 Download the zip file of the project, or clone the repo on your machine.
 
-`$ git clone https://github.com/DaltonOtineru/React-Redux-ToDo-List`
+```
+$ git clone https://github.com/DaltonOtineru/React-Redux-ToDo-List
+```
 
 In the **jsonAPI directory**, you can run:
 
